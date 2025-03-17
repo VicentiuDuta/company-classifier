@@ -1,0 +1,44 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+
+# Virtual environments
+venv/
+env/
+.env/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Archives and datasets
+*.csv
+*.pkl
+*.zip
+*.tar.gz
+
+# Trained models
+*.pt
+*.bin
+*.model
+
+# IDE
+.vscode/
+.idea/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Local configs
+.env
+.env.local
+
+# Specific exclusions for data
+!data/raw/README.md
+!requirements.txt
