@@ -44,10 +44,10 @@ def analyze_label_distribution(labels_list: List[List[str]]) -> pd.DataFrame:
     
     # Calculate percentage
     total_labels = sum(label_counts.values())
-    distribution_df['percentage'] = (distribution_df['count'] / total_labels * 100).round(2)
+    distribution_df['percentage'] = round(distribution_df['count'] / total_labels * 100, 2)
     
     # Add cumulative percentage
-    distribution_df['cumulative_percentage'] = distribution_df['percentage'].cumsum().round(2)
+    distribution_df['cumulative_percentage'] = round(distribution_df['percentage'].cumsum(), 2)
     
     return distribution_df
 
@@ -87,7 +87,7 @@ def analyze_coverage_by_attribute(company_df: pd.DataFrame,
             attribute_column: group_name,
             'company_count': group_count,
             'with_label_count': has_label,
-            'coverage_percentage': (has_label / group_count * 100).round(2),
+            'coverage_percentage': round(has_label / group_count * 100, 2),
             'avg_labels': round(avg_labels, 2)
         })
     
