@@ -23,8 +23,8 @@ class EmbeddingGenerator:
     Class for generating and managing text embeddings using sentence-transformers.
     """
     
-    def __init__(self, model_name: str = "all-MiniLM-L6-v2", 
-                 max_seq_length: int = 128,
+    def __init__(self, model_name: str = "all-mpnet-base-v2", 
+                 max_seq_length: int = 256,
                  cache_dir: str = None,
                  device: str = None):
         """
@@ -126,40 +126,40 @@ class EmbeddingGenerator:
         return embeddings_dict
     
     def combine_text_fields(self, df: pd.DataFrame, 
-                          text_columns: List[str], 
-                          weights: Optional[List[float]] = None) -> List[str]:
+                      text_columns: List[str], 
+                      weights: Optional[List[float]] = None) -> List[str]:
         """
-        Combine multiple text columns into a single list of texts.
-        
-        Args:
-            df: DataFrame containing the text columns
-            text_columns: List of column names to combine
-            weights: List of weights for each column (if None, all columns have equal weight)
-            
-        Returns:
-            List of combined texts
+        O versiune mai avansată pentru combinarea textelor care adaugă context explicit.
         """
-        # Set default weights if none provided
         if weights is None:
             weights = [1.0] * len(text_columns)
             
-        if len(weights) != len(text_columns):
-            raise ValueError("Number of weights must match number of text columns")
-        
-        # Initialize list to hold combined texts
         combined_texts = []
         
-        # Combine texts for each row
         for _, row in df.iterrows():
-            row_texts = []
+            # Adăugăm context structurat
+            context_parts = []
+            
+            # Includem metadate structurate despre companie
+            if 'sector' in df.columns and pd.notna(row['sector']):
+                context_parts.append(f"Sector: {row['sector']}")
+            if 'category' in df.columns and pd.notna(row['category']):
+                context_parts.append(f"Category: {row['category']}")
+            if 'niche' in df.columns and pd.notna(row['niche']):
+                context_parts.append(f"Niche: {row['niche']}")
+                
+            # Adăugăm textele propriu-zise cu diverse ponderi
+            text_parts = []
             for col, weight in zip(text_columns, weights):
-                if pd.notna(row[col]) and row[col]:  # Check if value exists and is not empty
-                    # Repeat text based on weight
+                if pd.notna(row[col]) and row[col]:
                     text = str(row[col])
-                    if weight > 1:
-                        text = (text + " ") * int(weight)
-                    row_texts.append(text)
-            combined_texts.append(" ".join(row_texts))
+                    # Repetăm textul de mai multe ori pentru a accentua importanța
+                    text = " ".join([text] * int(weight))
+                    text_parts.append(text)
+            
+            # Combinăm totul, punând contextul întâi pentru a încadra textul
+            full_text = " ".join(context_parts + text_parts)
+            combined_texts.append(full_text)
             
         return combined_texts
     
