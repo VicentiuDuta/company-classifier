@@ -12,32 +12,27 @@ preprocessing:
   remove_stopwords: true
   min_word_length: 2
   lemmatize: true
-  combine_fields: true  # Whether to combine company description and tags
 
 # Embedding parameters
 embeddings:
-  model_name: "all-MiniLM-L6-v2"  # Model from sentence-transformers
+  model_name: "all-MiniLM-L6-v2"
   max_seq_length: 128
   cache_dir: "data/embeddings"
   batch_size: 32
 
-# Clustering parameters
-clustering:
-  algorithm: "kmeans"  # Options: "kmeans", "dbscan"
-  n_clusters: 50       # For k-means
-  min_cluster_size: 5  # For DBSCAN
-  eps: 0.5             # For DBSCAN
-  visualize: true
-  analysis_top_n_words: 15
-
 # Classification parameters
 classification:
-  similarity_threshold: 0.35  # Minimum similarity to assign a label
-  top_k_labels: 3            # Maximum number of labels to assign per company
-  use_clustering: false      # Whether to use clustering to inform classification
+  similarity_threshold: 0.35
+  top_k_labels: 3
+  min_similarity_score: 0.25
 
 # Evaluation parameters
 evaluation:
-  test_size: 0.2        # Fraction of data to use for testing
-  random_seed: 42       # Random seed for reproducibility
-  metrics: ["precision", "recall", "f1"]  # Metrics to evaluate
+  test_size: 0.2
+  random_seed: 42
+  metrics: ["precision", "recall", "f1"]
+
+# Optional: Configuration for sector-based classification
+sector_classification:
+  min_confidence: 0.3
+  top_k_labels: 3
