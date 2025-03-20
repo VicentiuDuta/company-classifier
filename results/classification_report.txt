@@ -1,0 +1,39 @@
+Insurance Taxonomy Classification Report
+=====================================
+
+Coverage Statistics:
+- Initial coverage: 7400/9494 companies (77.94%)
+- Final coverage: 9494/9494 companies (100.00%)
+- Improvement: 2094 additional companies (22.06% increase)
+
+Label Distribution (Top 20):
+- Apparel Manufacturing: 1473 companies (was 685)
+- Marketing Services: 1382 companies (was 494)
+- Gas Manufacturing Services: 1248 companies (was 673)
+- Accessory Manufacturing: 1193 companies (was 691)
+- Travel Services: 1078 companies (was 247)
+- Real Estate Services: 915 companies (was 249)
+- Livestock Dealer Services: 647 companies (was 289)
+- Agricultural Equipment Services: 588 companies (was 491)
+- Cabinetry Manufacturing: 558 companies (was 530)
+- Furniture Manufacturing: 411 companies (was 407)
+- Textile Manufacturing Services: 406 companies (was 370)
+- Digital Marketing Services: 387 companies (was 267)
+- Software Manufacturing: 368 companies (was 366)
+- Wood Product Manufacturing: 353 companies (was 353)
+- Chemical Manufacturing: 350 companies (was 339)
+- Bakery Production Services: 343 companies (was 300)
+- Food Processing Services: 321 companies (was 277)
+- Corporate Responsibility Services: 315 companies (was 138)
+- Plastic Manufacturing: 307 companies (was 307)
+- E-Commerce Services: 291 companies (was 121)
+
+
+Sector-based Coverage:
+- Services: 3556/3556 companies (100.00%)
+- Manufacturing: 4005/4005 companies (100.00%)
+- Wholesale: 779/779 companies (100.00%)
+- Retail: 571/571 companies (100.00%)
+- Government: 255/255 companies (100.00%)
+- Non Profit: 140/140 companies (100.00%)
+- Education: 161/161 companies (100.00%)
