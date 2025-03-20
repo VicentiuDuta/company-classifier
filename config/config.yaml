@@ -32,7 +32,7 @@ clustering:
 
 # Classification parameters
 classification:
-  similarity_threshold: 0.45  # Minimum similarity to assign a label
+  similarity_threshold: 0.35  # Minimum similarity to assign a label
   top_k_labels: 3            # Maximum number of labels to assign per company
   use_clustering: false      # Whether to use clustering to inform classification
 

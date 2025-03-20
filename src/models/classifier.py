@@ -22,9 +22,9 @@ class InsuranceTaxonomyClassifier:
     """
     
     def __init__(self, 
-                 similarity_threshold: float = 0.5,
-                 top_k_labels: int = 3,
-                 min_similarity_score: float = 0.3):
+                 similarity_threshold: float = 0.35,
+                 top_k_labels: int = 5,
+                 min_similarity_score: float = 0.25):
         """
         Initialize the classifier.
         
