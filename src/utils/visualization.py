@@ -15,9 +15,9 @@ from sklearn.decomposition import PCA
 import os
 from collections import Counter
 
-# Adaugă backend non-interactiv pentru matplotlib
+# Add non-interactive backend for matplotlib
 import matplotlib
-matplotlib.use('Agg')  # Folosește backend non-interactiv pentru a preveni probleme
+matplotlib.use('Agg')  # Use non-interactive backend to prevent issues
 
 # Configure logging
 logger = logging.getLogger(__name__)
@@ -51,7 +51,7 @@ def plot_embedding_clusters(embeddings: np.ndarray,
     if n_components not in [2, 3]:
         raise ValueError("n_components must be 2 or 3")
     
-    # Verifică dacă embeddings este valid
+    # Check if embeddings are valid
     if embeddings is None or not isinstance(embeddings, np.ndarray):
         logger.warning(f"Invalid embeddings type: {type(embeddings)}, skipping visualization")
         return
@@ -62,13 +62,13 @@ def plot_embedding_clusters(embeddings: np.ndarray,
     
     if len(labels) != embeddings.shape[0]:
         logger.warning(f"Number of labels ({len(labels)}) doesn't match number of embeddings ({embeddings.shape[0]})")
-        # Ajustează labels pentru a se potrivi cu number of embeddings
+        # Adjust labels to match number of embeddings
         if len(labels) < embeddings.shape[0]:
             labels = labels + ["Unknown"] * (embeddings.shape[0] - len(labels))
         else:
             labels = labels[:embeddings.shape[0]]
     
-    # Verifică pentru valori NaN și înlocuiește-le
+    # Check for NaN values and replace them
     if np.isnan(embeddings).any():
         logger.warning("NaN values found in embeddings, replacing with zeros")
         embeddings = np.nan_to_num(embeddings)
@@ -100,7 +100,7 @@ def plot_embedding_clusters(embeddings: np.ndarray,
         # Add labels if requested
         if show_labels and len(labels) <= max_labels:
             for i, label in enumerate(labels):
-                if i < reduced_data.shape[0]:  # Verifică dacă indexul este valid
+                if i < reduced_data.shape[0]:  # Check if index is valid
                     plt.annotate(label, (reduced_data[i, 0], reduced_data[i, 1]), 
                                 fontsize=8, ha='right', va='bottom')
                 
@@ -117,7 +117,7 @@ def plot_embedding_clusters(embeddings: np.ndarray,
         # Add labels if requested
         if show_labels and len(labels) <= max_labels:
             for i, label in enumerate(labels):
-                if i < reduced_data.shape[0]:  # Verifică dacă indexul este valid
+                if i < reduced_data.shape[0]:  # Check if index is valid
                     ax.text(reduced_data[i, 0], reduced_data[i, 1], reduced_data[i, 2], 
                            label, fontsize=8)
                 
@@ -168,7 +168,7 @@ def plot_similarity_heatmap(similarity_matrix: np.ndarray,
         cmap: Colormap to use
         max_labels: Maximum number of labels to display
     """
-    # Verificări de validitate
+    # Validation checks
     if similarity_matrix is None or not isinstance(similarity_matrix, np.ndarray):
         logger.warning(f"Invalid similarity_matrix type: {type(similarity_matrix)}")
         return
@@ -177,7 +177,7 @@ def plot_similarity_heatmap(similarity_matrix: np.ndarray,
         logger.warning("Empty similarity_matrix provided")
         return
     
-    # Verifică pentru valori NaN și înlocuiește-le
+    # Check for NaN values and replace them
     if np.isnan(similarity_matrix).any():
         logger.warning("NaN values found in similarity_matrix, replacing with zeros")
         similarity_matrix = np.nan_to_num(similarity_matrix)
@@ -232,11 +232,11 @@ def plot_label_counts(labels_list: List[List[str]],
         figsize: Figure size
         output_path: Path to save the plot (if None, just display)
     """
-    # Verifică dacă labels_list este valid
+    # Check if labels_list is valid
     if not labels_list:
         logger.warning("Empty labels_list provided to plot_label_counts")
         
-        # Creează o figură goală cu un mesaj
+        # Create an empty figure with a message
         plt.figure(figsize=figsize)
         plt.text(0.5, 0.5, "No labels data available", 
                 ha='center', va='center', fontsize=14)
@@ -255,7 +255,7 @@ def plot_label_counts(labels_list: List[List[str]],
     if not all_labels:
         logger.warning("No valid labels found in labels_list")
         
-        # Creează o figură goală cu un mesaj
+        # Create an empty figure with a message
         plt.figure(figsize=figsize)
         plt.text(0.5, 0.5, "No valid labels found", 
                 ha='center', va='center', fontsize=14)
@@ -326,11 +326,11 @@ def plot_labels_per_company(labels_list: List[List[str]],
         figsize: Figure size
         output_path: Path to save the plot (if None, just display)
     """
-    # Verifică dacă labels_list este valid
+    # Check if labels_list is valid
     if not labels_list:
         logger.warning("Empty labels_list provided to plot_labels_per_company")
         
-        # Creează o figură goală cu un mesaj
+        # Create an empty figure with a message
         plt.figure(figsize=figsize)
         plt.text(0.5, 0.5, "No labels data available", 
                 ha='center', va='center', fontsize=14)
@@ -349,7 +349,7 @@ def plot_labels_per_company(labels_list: List[List[str]],
     if not label_counts or max(label_counts, default=0) == 0:
         logger.warning("No valid labels found in any company")
         
-        # Creează o figură goală cu un mesaj
+        # Create an empty figure with a message
         plt.figure(figsize=figsize)
         plt.text(0.5, 0.5, "No valid labels found", 
                 ha='center', va='center', fontsize=14)
@@ -418,7 +418,7 @@ def plot_coverage_by_attribute(company_df: pd.DataFrame,
         figsize: Figure size
         output_path: Path to save the plot (if None, just display)
     """
-    # Verifică dacă DataFrame-ul și coloanele sunt valide
+    # Check if DataFrame and columns are valid
     if company_df is None or company_df.empty:
         logger.warning("Empty DataFrame provided to plot_coverage_by_attribute")
         return
