@@ -129,7 +129,7 @@ class EmbeddingGenerator:
                       text_columns: List[str], 
                       weights: Optional[List[float]] = None) -> List[str]:
         """
-        O versiune mai avansată pentru combinarea textelor care adaugă context explicit.
+        An advanced version for combining texts that adds explicit context.
         """
         if weights is None:
             weights = [1.0] * len(text_columns)
@@ -137,10 +137,10 @@ class EmbeddingGenerator:
         combined_texts = []
         
         for _, row in df.iterrows():
-            # Adăugăm context structurat
+            # Add structured context
             context_parts = []
             
-            # Includem metadate structurate despre companie
+            # Include structured metadata about the company
             if 'sector' in df.columns and pd.notna(row['sector']):
                 context_parts.append(f"Sector: {row['sector']}")
             if 'category' in df.columns and pd.notna(row['category']):
@@ -148,16 +148,16 @@ class EmbeddingGenerator:
             if 'niche' in df.columns and pd.notna(row['niche']):
                 context_parts.append(f"Niche: {row['niche']}")
                 
-            # Adăugăm textele propriu-zise cu diverse ponderi
+            # Add the actual texts with various weights
             text_parts = []
             for col, weight in zip(text_columns, weights):
                 if pd.notna(row[col]) and row[col]:
                     text = str(row[col])
-                    # Repetăm textul de mai multe ori pentru a accentua importanța
+                    # Repeat the text multiple times to emphasize importance
                     text = " ".join([text] * int(weight))
                     text_parts.append(text)
             
-            # Combinăm totul, punând contextul întâi pentru a încadra textul
+            # Combine everything, putting context first to frame the text
             full_text = " ".join(context_parts + text_parts)
             combined_texts.append(full_text)
             

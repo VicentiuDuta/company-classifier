@@ -432,7 +432,7 @@ def sector_based_classification(df: pd.DataFrame,
     # Create a copy to avoid modifying the original
     result_df = df.copy()
     
-    # Adaugă coloana pentru metoda de clasificare
+    # Add column for classification method
     if 'classification_method' not in result_df.columns:
         result_df['classification_method'] = 'semantic'
     
@@ -456,7 +456,7 @@ def sector_based_classification(df: pd.DataFrame,
                     [f"{label} ({score}*)" for label, score in zip(labels, score_strings)]
                 )
                 
-                # Marchează metoda de clasificare
+                # Mark classification method
                 result_df.at[idx, 'classification_method'] = 'sector_based'
                 
                 stats['new'] += 1
@@ -589,13 +589,13 @@ def generate_final_report(final_df: pd.DataFrame,
             else:
                 matched_labels.append([])
         
-        # Creează dicționarul de rezultate
+        # Create mock prediction results
         mock_prediction_results = {
             'matched_labels': matched_labels,
             'taxonomy_labels': taxonomy_labels
         }
         
-        # Adaugă taxonomy_embeddings dacă este disponibil
+        # Add taxonomy embeddings if available
         if model_components and "taxonomy_embeddings" in model_components:
             mock_prediction_results['taxonomy_embeddings'] = model_components["taxonomy_embeddings"]
         
@@ -677,7 +677,7 @@ def main():
         config,
         model_components["taxonomy_labels"],
         logger,
-        model_components  # Transmite model_components către funcție
+        model_components
     )
     
     logger.info("Classification workflow completed successfully")
