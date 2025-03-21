@@ -398,10 +398,11 @@ def predict_by_sector(company, mappings: Dict, top_k: int = 3) -> Tuple[List[str
     top_labels = []
     top_scores = []
     
+    max_score = max(candidate_labels.values()) if candidate_labels else 1
+    
     for label, score in candidate_labels.most_common(top_k):
         top_labels.append(label)
-        # Convert score to a value between 0 and 1 for consistency
-        normalized_score = min(0.99, score / 10.0)  
+        normalized_score = 0.30 + (0.35 * score / max_score)
         top_scores.append(normalized_score)
     
     return top_labels, top_scores
@@ -413,16 +414,6 @@ def sector_based_classification(df: pd.DataFrame,
                           logger: logging.Logger = None) -> pd.DataFrame:
     """
     Apply sector-based classification for unlabeled or poorly classified companies.
-    
-    Args:
-        df: DataFrame with companies
-        min_confidence: Minimum confidence score to accept a prediction
-        top_k: Maximum number of labels to return
-        delimiter: Delimiter for multiple labels
-        logger: Logger instance
-        
-    Returns:
-        Updated DataFrame
     """
     if logger is None:
         logger = logging.getLogger(__name__)
@@ -441,6 +432,10 @@ def sector_based_classification(df: pd.DataFrame,
     # Create a copy to avoid modifying the original
     result_df = df.copy()
     
+    # Adaugă coloana pentru metoda de clasificare
+    if 'classification_method' not in result_df.columns:
+        result_df['classification_method'] = 'semantic'
+    
     # Counters for statistics
     stats = {'total': 0, 'improved': 0, 'new': 0}
     
@@ -458,8 +453,11 @@ def sector_based_classification(df: pd.DataFrame,
                 # Update labels and scores
                 result_df.at[idx, 'insurance_label'] = delimiter.join(labels)
                 result_df.at[idx, 'similarity_scores'] = delimiter.join(
-                    [f"{label} ({score})" for label, score in zip(labels, score_strings)]
+                    [f"{label} ({score}*)" for label, score in zip(labels, score_strings)]
                 )
+                
+                # Marchează metoda de clasificare
+                result_df.at[idx, 'classification_method'] = 'sector_based'
                 
                 stats['new'] += 1
         else:
@@ -489,8 +487,11 @@ def sector_based_classification(df: pd.DataFrame,
                     # Update labels and scores
                     result_df.at[idx, 'insurance_label'] = delimiter.join(new_labels)
                     result_df.at[idx, 'similarity_scores'] = delimiter.join(
-                        [f"{label} ({score})" for label, score in zip(new_labels, score_strings)]
+                        [f"{label} ({score}*)" for label, score in zip(new_labels, score_strings)]
                     )
+                    
+                    # Marchează metoda de clasificare
+                    result_df.at[idx, 'classification_method'] = 'sector_based'
                     
                     stats['improved'] += 1
         
