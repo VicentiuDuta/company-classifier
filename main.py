@@ -514,7 +514,8 @@ def generate_final_report(final_df: pd.DataFrame,
                       initial_df: pd.DataFrame, 
                       config: Dict,
                       taxonomy_labels: List[str],
-                      logger: logging.Logger) -> None:
+                      logger: logging.Logger,
+                      model_components: Dict = None) -> None:
     """
     Generate final report and visualizations.
     
@@ -524,6 +525,7 @@ def generate_final_report(final_df: pd.DataFrame,
         config: Configuration dictionary
         taxonomy_labels: List of taxonomy labels
         logger: Logger instance
+        model_components: Optional model components for taxonomy embeddings
     """
     results_dir = config.get("paths", {}).get("results_dir", "results")
     os.makedirs(results_dir, exist_ok=True)
@@ -576,24 +578,35 @@ def generate_final_report(final_df: pd.DataFrame,
     logger.info(f"Report generated and saved to {report_file}")
     
     # Generate evaluation report and dashboard
-    mock_prediction_results = {
-        'matched_labels': [
-            labels.split('; ') if isinstance(labels, str) and labels else [] 
-            for labels in final_df['insurance_label']
-        ],
-        'taxonomy_labels': taxonomy_labels
-    }
-    
-    # Generate visualizations
     try:
-        # You might need to adjust these functions based on your implementation
+        final_df['insurance_label'] = final_df['insurance_label'].fillna('')
+        
+        matched_labels = []
+        for label_str in final_df['insurance_label']:
+            if isinstance(label_str, str) and label_str.strip():
+                matched_labels.append(label_str.split('; '))
+            else:
+                matched_labels.append([])
+        
+        # Creează dicționarul de rezultate
+        mock_prediction_results = {
+            'matched_labels': matched_labels,
+            'taxonomy_labels': taxonomy_labels
+        }
+        
+        # Adaugă taxonomy_embeddings dacă este disponibil
+        if model_components and "taxonomy_embeddings" in model_components:
+            mock_prediction_results['taxonomy_embeddings'] = model_components["taxonomy_embeddings"]
+        
+        # Generate visualizations
         generate_evaluation_report(final_df, mock_prediction_results, results_dir)
         generate_report_dashboard(final_df, mock_prediction_results, 
                                 os.path.join(results_dir, "dashboard"), 
                                 taxonomy_labels)
         logger.info("Evaluation reports and dashboard generated")
     except Exception as e:
-        logger.warning(f"Could not generate visualization reports: {e}")
+        logger.error(f"Could not generate visualization reports: {e}")
+        logger.exception(e)
 
 def main():
     """Main function to run the unified classification workflow."""
@@ -662,7 +675,8 @@ def main():
         initial_df,
         config,
         model_components["taxonomy_labels"],
-        logger
+        logger,
+        model_components  # Transmite model_components către funcție
     )
     
     logger.info("Classification workflow completed successfully")

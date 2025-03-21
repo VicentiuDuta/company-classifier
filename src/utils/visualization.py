@@ -15,6 +15,10 @@ from sklearn.decomposition import PCA
 import os
 from collections import Counter
 
+# Adaugă backend non-interactiv pentru matplotlib
+import matplotlib
+matplotlib.use('Agg')  # Folosește backend non-interactiv pentru a preveni probleme
+
 # Configure logging
 logger = logging.getLogger(__name__)
 
@@ -47,17 +51,43 @@ def plot_embedding_clusters(embeddings: np.ndarray,
     if n_components not in [2, 3]:
         raise ValueError("n_components must be 2 or 3")
     
-    # Apply dimensionality reduction
-    if method.lower() == "tsne":
-        logger.info(f"Applying t-SNE with {n_components} components")
-        reducer = TSNE(n_components=n_components, random_state=random_state)
-    elif method.lower() == "pca":
-        logger.info(f"Applying PCA with {n_components} components")
-        reducer = PCA(n_components=n_components, random_state=random_state)
-    else:
-        raise ValueError("Method must be 'tsne' or 'pca'")
+    # Verifică dacă embeddings este valid
+    if embeddings is None or not isinstance(embeddings, np.ndarray):
+        logger.warning(f"Invalid embeddings type: {type(embeddings)}, skipping visualization")
+        return
+        
+    if embeddings.shape[0] == 0:
+        logger.warning("Empty embeddings array provided to plot_embedding_clusters")
+        return
     
-    reduced_data = reducer.fit_transform(embeddings)
+    if len(labels) != embeddings.shape[0]:
+        logger.warning(f"Number of labels ({len(labels)}) doesn't match number of embeddings ({embeddings.shape[0]})")
+        # Ajustează labels pentru a se potrivi cu number of embeddings
+        if len(labels) < embeddings.shape[0]:
+            labels = labels + ["Unknown"] * (embeddings.shape[0] - len(labels))
+        else:
+            labels = labels[:embeddings.shape[0]]
+    
+    # Verifică pentru valori NaN și înlocuiește-le
+    if np.isnan(embeddings).any():
+        logger.warning("NaN values found in embeddings, replacing with zeros")
+        embeddings = np.nan_to_num(embeddings)
+    
+    # Apply dimensionality reduction
+    try:
+        if method.lower() == "tsne":
+            logger.info(f"Applying t-SNE with {n_components} components")
+            reducer = TSNE(n_components=n_components, random_state=random_state)
+        elif method.lower() == "pca":
+            logger.info(f"Applying PCA with {n_components} components")
+            reducer = PCA(n_components=n_components, random_state=random_state)
+        else:
+            raise ValueError("Method must be 'tsne' or 'pca'")
+        
+        reduced_data = reducer.fit_transform(embeddings)
+    except Exception as e:
+        logger.error(f"Error during dimensionality reduction: {e}")
+        return
     
     # Create plot
     plt.figure(figsize=figsize)
@@ -70,8 +100,9 @@ def plot_embedding_clusters(embeddings: np.ndarray,
         # Add labels if requested
         if show_labels and len(labels) <= max_labels:
             for i, label in enumerate(labels):
-                plt.annotate(label, (reduced_data[i, 0], reduced_data[i, 1]), 
-                            fontsize=8, ha='right', va='bottom')
+                if i < reduced_data.shape[0]:  # Verifică dacă indexul este valid
+                    plt.annotate(label, (reduced_data[i, 0], reduced_data[i, 1]), 
+                                fontsize=8, ha='right', va='bottom')
                 
         # Set labels
         plt.xlabel('Component 1')
@@ -86,8 +117,9 @@ def plot_embedding_clusters(embeddings: np.ndarray,
         # Add labels if requested
         if show_labels and len(labels) <= max_labels:
             for i, label in enumerate(labels):
-                ax.text(reduced_data[i, 0], reduced_data[i, 1], reduced_data[i, 2], 
-                       label, fontsize=8)
+                if i < reduced_data.shape[0]:  # Verifică dacă indexul este valid
+                    ax.text(reduced_data[i, 0], reduced_data[i, 1], reduced_data[i, 2], 
+                           label, fontsize=8)
                 
         # Set labels
         ax.set_xlabel('Component 1')
@@ -105,11 +137,14 @@ def plot_embedding_clusters(embeddings: np.ndarray,
     
     # Save if output path is provided
     if output_path:
-        plt.savefig(output_path, dpi=300, bbox_inches='tight')
-        logger.info(f"Plot saved to {output_path}")
+        try:
+            plt.savefig(output_path, dpi=300, bbox_inches='tight')
+            logger.info(f"Plot saved to {output_path}")
+        except Exception as e:
+            logger.error(f"Error saving plot to {output_path}: {e}")
     
     # Display
-    plt.show()
+    plt.close()
 
 
 def plot_similarity_heatmap(similarity_matrix: np.ndarray,
@@ -133,6 +168,20 @@ def plot_similarity_heatmap(similarity_matrix: np.ndarray,
         cmap: Colormap to use
         max_labels: Maximum number of labels to display
     """
+    # Verificări de validitate
+    if similarity_matrix is None or not isinstance(similarity_matrix, np.ndarray):
+        logger.warning(f"Invalid similarity_matrix type: {type(similarity_matrix)}")
+        return
+        
+    if similarity_matrix.size == 0:
+        logger.warning("Empty similarity_matrix provided")
+        return
+    
+    # Verifică pentru valori NaN și înlocuiește-le
+    if np.isnan(similarity_matrix).any():
+        logger.warning("NaN values found in similarity_matrix, replacing with zeros")
+        similarity_matrix = np.nan_to_num(similarity_matrix)
+    
     # Limit the number of labels to display
     if len(x_labels) > max_labels or len(y_labels) > max_labels:
         logger.info(f"Limiting heatmap to {max_labels} labels")
@@ -158,11 +207,14 @@ def plot_similarity_heatmap(similarity_matrix: np.ndarray,
     
     # Save if output path is provided
     if output_path:
-        plt.savefig(output_path, dpi=300, bbox_inches='tight')
-        logger.info(f"Heatmap saved to {output_path}")
+        try:
+            plt.savefig(output_path, dpi=300, bbox_inches='tight')
+            logger.info(f"Heatmap saved to {output_path}")
+        except Exception as e:
+            logger.error(f"Error saving heatmap to {output_path}: {e}")
     
     # Display
-    plt.show()
+    plt.close()
 
 
 def plot_label_counts(labels_list: List[List[str]],
@@ -180,8 +232,41 @@ def plot_label_counts(labels_list: List[List[str]],
         figsize: Figure size
         output_path: Path to save the plot (if None, just display)
     """
+    # Verifică dacă labels_list este valid
+    if not labels_list:
+        logger.warning("Empty labels_list provided to plot_label_counts")
+        
+        # Creează o figură goală cu un mesaj
+        plt.figure(figsize=figsize)
+        plt.text(0.5, 0.5, "No labels data available", 
+                ha='center', va='center', fontsize=14)
+        plt.tight_layout()
+        
+        if output_path:
+            plt.savefig(output_path, dpi=300, bbox_inches='tight')
+            logger.info(f"Empty plot saved to {output_path}")
+        
+        plt.close()
+        return
+    
     # Flatten the list of lists to count all labels
-    all_labels = [label for sublist in labels_list for label in sublist]
+    all_labels = [label for sublist in labels_list for label in sublist if label]
+    
+    if not all_labels:
+        logger.warning("No valid labels found in labels_list")
+        
+        # Creează o figură goală cu un mesaj
+        plt.figure(figsize=figsize)
+        plt.text(0.5, 0.5, "No valid labels found", 
+                ha='center', va='center', fontsize=14)
+        plt.tight_layout()
+        
+        if output_path:
+            plt.savefig(output_path, dpi=300, bbox_inches='tight')
+            logger.info(f"Empty plot saved to {output_path}")
+        
+        plt.close()
+        return
     
     # Count occurrences of each label
     label_counts = Counter(all_labels)
@@ -218,11 +303,14 @@ def plot_label_counts(labels_list: List[List[str]],
     
     # Save if output path is provided
     if output_path:
-        plt.savefig(output_path, dpi=300, bbox_inches='tight')
-        logger.info(f"Plot saved to {output_path}")
+        try:
+            plt.savefig(output_path, dpi=300, bbox_inches='tight')
+            logger.info(f"Plot saved to {output_path}")
+        except Exception as e:
+            logger.error(f"Error saving plot to {output_path}: {e}")
     
     # Display
-    plt.show()
+    plt.close()
 
 
 def plot_labels_per_company(labels_list: List[List[str]],
@@ -238,8 +326,41 @@ def plot_labels_per_company(labels_list: List[List[str]],
         figsize: Figure size
         output_path: Path to save the plot (if None, just display)
     """
+    # Verifică dacă labels_list este valid
+    if not labels_list:
+        logger.warning("Empty labels_list provided to plot_labels_per_company")
+        
+        # Creează o figură goală cu un mesaj
+        plt.figure(figsize=figsize)
+        plt.text(0.5, 0.5, "No labels data available", 
+                ha='center', va='center', fontsize=14)
+        plt.tight_layout()
+        
+        if output_path:
+            plt.savefig(output_path, dpi=300, bbox_inches='tight')
+            logger.info(f"Empty plot saved to {output_path}")
+        
+        plt.close()
+        return
+    
     # Count number of labels per company
     label_counts = [len(labels) for labels in labels_list]
+    
+    if not label_counts or max(label_counts, default=0) == 0:
+        logger.warning("No valid labels found in any company")
+        
+        # Creează o figură goală cu un mesaj
+        plt.figure(figsize=figsize)
+        plt.text(0.5, 0.5, "No valid labels found", 
+                ha='center', va='center', fontsize=14)
+        plt.tight_layout()
+        
+        if output_path:
+            plt.savefig(output_path, dpi=300, bbox_inches='tight')
+            logger.info(f"Empty plot saved to {output_path}")
+        
+        plt.close()
+        return
     
     # Create plot
     plt.figure(figsize=figsize)
@@ -268,11 +389,14 @@ def plot_labels_per_company(labels_list: List[List[str]],
     
     # Save if output path is provided
     if output_path:
-        plt.savefig(output_path, dpi=300, bbox_inches='tight')
-        logger.info(f"Plot saved to {output_path}")
+        try:
+            plt.savefig(output_path, dpi=300, bbox_inches='tight')
+            logger.info(f"Plot saved to {output_path}")
+        except Exception as e:
+            logger.error(f"Error saving plot to {output_path}: {e}")
     
     # Display
-    plt.show()
+    plt.close()
 
 
 def plot_coverage_by_attribute(company_df: pd.DataFrame,
@@ -294,6 +418,19 @@ def plot_coverage_by_attribute(company_df: pd.DataFrame,
         figsize: Figure size
         output_path: Path to save the plot (if None, just display)
     """
+    # Verifică dacă DataFrame-ul și coloanele sunt valide
+    if company_df is None or company_df.empty:
+        logger.warning("Empty DataFrame provided to plot_coverage_by_attribute")
+        return
+        
+    if attribute_column not in company_df.columns:
+        logger.warning(f"Column '{attribute_column}' not found in DataFrame")
+        return
+        
+    if insurance_label_column not in company_df.columns:
+        logger.warning(f"Column '{insurance_label_column}' not found in DataFrame")
+        return
+    
     # Generate title if not provided
     if title is None:
         title = f"Insurance Label Coverage by {attribute_column.capitalize()}"
@@ -323,6 +460,11 @@ def plot_coverage_by_attribute(company_df: pd.DataFrame,
     
     # Convert to DataFrame and sort by coverage
     coverage_df = pd.DataFrame(stats)
+    
+    if coverage_df.empty:
+        logger.warning("No valid statistics calculated for plot_coverage_by_attribute")
+        return
+        
     coverage_df = coverage_df.sort_values('coverage_percentage', ascending=False).head(top_n)
     
     # Create plot
@@ -351,11 +493,14 @@ def plot_coverage_by_attribute(company_df: pd.DataFrame,
     
     # Save if output path is provided
     if output_path:
-        plt.savefig(output_path, dpi=300, bbox_inches='tight')
-        logger.info(f"Plot saved to {output_path}")
+        try:
+            plt.savefig(output_path, dpi=300, bbox_inches='tight')
+            logger.info(f"Plot saved to {output_path}")
+        except Exception as e:
+            logger.error(f"Error saving plot to {output_path}: {e}")
     
     # Display
-    plt.show()
+    plt.close()
 
 
 def generate_report_dashboard(company_df: pd.DataFrame,
@@ -374,51 +519,90 @@ def generate_report_dashboard(company_df: pd.DataFrame,
     # Ensure output folder exists
     os.makedirs(output_folder, exist_ok=True)
     
+    # Log available keys in prediction_results
+    logger.info(f"Keys in prediction_results: {list(prediction_results.keys())}")
+    
     # Extract matched labels list
+    if 'matched_labels' not in prediction_results:
+        logger.error("Missing 'matched_labels' in prediction_results")
+        with open(f"{output_folder}/README.txt", "w") as f:
+            f.write("Dashboard generation failed: Missing 'matched_labels' in prediction_results\n")
+        return
+    
     matched_labels_list = prediction_results['matched_labels']
+    
+    logger.info(f"Matched labels list length: {len(matched_labels_list)}")
+    logger.info(f"First few matched labels: {matched_labels_list[:3] if matched_labels_list else 'None'}")
     
     logger.info("Generating dashboard visualizations")
     
     # Plot label counts
-    logger.info("Plotting label counts")
-    plot_label_counts(
-        matched_labels_list, 
-        output_path=f"{output_folder}/top_labels.png"
-    )
+    try:
+        logger.info("Plotting label counts")
+        plot_label_counts(
+            matched_labels_list, 
+            output_path=f"{output_folder}/top_labels.png"
+        )
+    except Exception as e:
+        logger.error(f"Error plotting label counts: {e}")
+        logger.exception(e)
     
     # Plot labels per company
-    logger.info("Plotting labels per company distribution")
-    plot_labels_per_company(
-        matched_labels_list,
-        output_path=f"{output_folder}/labels_per_company.png"
-    )
+    try:
+        logger.info("Plotting labels per company distribution")
+        plot_labels_per_company(
+            matched_labels_list,
+            output_path=f"{output_folder}/labels_per_company.png"
+        )
+    except Exception as e:
+        logger.error(f"Error plotting labels per company: {e}")
+        logger.exception(e)
     
     # Plot coverage by sector if available
-    if 'sector' in company_df.columns:
-        logger.info("Plotting coverage by sector")
-        plot_coverage_by_attribute(
-            company_df, 
-            'sector',
-            output_path=f"{output_folder}/sector_coverage.png"
-        )
+    try:
+        if 'sector' in company_df.columns:
+            logger.info("Plotting coverage by sector")
+            plot_coverage_by_attribute(
+                company_df, 
+                'sector',
+                output_path=f"{output_folder}/sector_coverage.png"
+            )
+    except Exception as e:
+        logger.error(f"Error plotting sector coverage: {e}")
+        logger.exception(e)
     
     # Plot coverage by category if available
-    if 'category' in company_df.columns:
-        logger.info("Plotting coverage by category")
-        plot_coverage_by_attribute(
-            company_df, 
-            'category',
-            output_path=f"{output_folder}/category_coverage.png"
-        )
+    try:
+        if 'category' in company_df.columns:
+            logger.info("Plotting coverage by category")
+            plot_coverage_by_attribute(
+                company_df, 
+                'category',
+                output_path=f"{output_folder}/category_coverage.png"
+            )
+    except Exception as e:
+        logger.error(f"Error plotting category coverage: {e}")
+        logger.exception(e)
     
     # Plot taxonomy embedding clusters if available
-    if taxonomy_labels and 'taxonomy_embeddings' in prediction_results:
-        logger.info("Plotting taxonomy embedding clusters")
-        plot_embedding_clusters(
-            prediction_results['taxonomy_embeddings'], 
-            taxonomy_labels,
-            title="Insurance Taxonomy Embeddings",
-            output_path=f"{output_folder}/taxonomy_clusters.png"
-        )
+    try:
+        if taxonomy_labels and 'taxonomy_embeddings' in prediction_results:
+            logger.info(f"Taxonomy embeddings available, shape: {prediction_results['taxonomy_embeddings'].shape if hasattr(prediction_results['taxonomy_embeddings'], 'shape') else 'unknown'}")
+            logger.info(f"Taxonomy labels count: {len(taxonomy_labels)}")
+            
+            plot_embedding_clusters(
+                prediction_results['taxonomy_embeddings'], 
+                taxonomy_labels,
+                title="Insurance Taxonomy Embeddings",
+                output_path=f"{output_folder}/taxonomy_clusters.png"
+            )
+        else:
+            if not taxonomy_labels:
+                logger.warning("Taxonomy labels not provided")
+            if 'taxonomy_embeddings' not in prediction_results:
+                logger.warning("taxonomy_embeddings not found in prediction_results")
+    except Exception as e:
+        logger.error(f"Error plotting taxonomy clusters: {e}")
+        logger.exception(e)
     
     logger.info(f"Dashboard generated in {output_folder}")
