@@ -53,6 +53,11 @@ pip install -e .
 
 ## ⚙️ Usage
 
+### Test the classifier:
+``` bash
+python classify_company.py
+```
+
 ### Run the classification process:
 ```bash
 python main.py
@@ -85,6 +90,33 @@ The classification process involves **three main stages**:
 - Aim for 100% coverage
 
 ---
+
+## 📊 Key Model Files
+
+### classifier.pkl
+This file contains the serialized (saved) state of the trained classifier, created using Python's `pickle` library. It is automatically generated during the training process and saved in the `models/` directory.
+
+**Contents:**
+- Configured similarity thresholds for classification
+- Maximum number of labels per company
+- Minimum similarity score to consider a match
+- Insurance taxonomy labels
+- Pre-computed embeddings for these labels
+
+**Benefits:**
+- Eliminates the need to regenerate taxonomy embeddings for each run
+- Enables standalone classification applications (like `classify_company.py`)
+- Significantly reduces startup time when classifying new companies
+
+**Usage:**
+The classifier is loaded automatically by both the main pipeline and the interactive classification script:
+
+```python
+# Example of loading the classifier
+from src.models.classifier import InsuranceTaxonomyClassifier
+classifier = InsuranceTaxonomyClassifier.load("models/classifier.pkl")
+```
+If you modify the taxonomy or retrain the model, a new classifier.pkl file will be generated.
 
 ## 📦 Dependencies
 - `sentence-transformers`
