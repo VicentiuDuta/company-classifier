@@ -80,51 +80,6 @@ class EmbeddingGenerator:
             
         return embeddings
     
-    def generate_embeddings_for_dataframe(self, df: pd.DataFrame, 
-                                        text_column: str,
-                                        id_column: Optional[str] = None,
-                                        batch_size: int = 32,
-                                        cache_file: Optional[str] = None) -> Dict[str, np.ndarray]:
-        """
-        Generate embeddings for texts in a DataFrame column.
-        
-        Args:
-            df: DataFrame containing the texts
-            text_column: Name of the column containing the texts
-            id_column: Name of the column to use as keys for the embeddings dict
-                      (if None, will use row indices)
-            batch_size: Batch size for embedding generation
-            cache_file: File to cache the embeddings to
-            
-        Returns:
-            Dictionary mapping IDs to embeddings
-        """
-        # Check if cache exists and load it if it does
-        if cache_file and os.path.exists(cache_file):
-            logger.info(f"Loading cached embeddings from {cache_file}")
-            with open(cache_file, 'rb') as f:
-                return pickle.load(f)
-        
-        # Generate embeddings
-        texts = df[text_column].tolist()
-        embeddings = self.generate_embeddings(texts, batch_size=batch_size)
-        
-        # Create dictionary
-        if id_column:
-            ids = df[id_column].tolist()
-        else:
-            ids = df.index.tolist()
-            
-        embeddings_dict = {str(id_val): emb for id_val, emb in zip(ids, embeddings)}
-        
-        # Cache embeddings if cache_file is provided
-        if cache_file:
-            logger.info(f"Caching embeddings to {cache_file}")
-            with open(cache_file, 'wb') as f:
-                pickle.dump(embeddings_dict, f)
-                
-        return embeddings_dict
-    
     def combine_text_fields(self, df: pd.DataFrame, 
                       text_columns: List[str], 
                       weights: Optional[List[float]] = None) -> List[str]:
