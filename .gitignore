@@ -18,6 +18,7 @@ env/
 
 # Archives and datasets
 *.csv
+!data/raw/*.csv
 *.pkl
 *.zip
 *.tar.gz
