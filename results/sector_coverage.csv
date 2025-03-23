@@ -1,0 +1,8 @@
+sector,company_count,with_label_count,coverage_percentage,avg_labels
+Education,161,161,100.0,2.57
+Government,255,255,100.0,2.65
+Manufacturing,4005,4005,100.0,2.62
+Non Profit,140,140,100.0,2.54
+Retail,571,571,100.0,2.4
+Services,3556,3556,100.0,2.61
+Wholesale,779,779,100.0,2.42

@@ -1,0 +1,451 @@
+category,company_count,with_label_count,coverage_percentage,avg_labels
+Zoo,8,8,100.0,2.5
+Accounting & Bookkeeping Services,30,30,100.0,2.8
+Tech Companies,28,28,100.0,2.86
+Telecommunications,22,22,100.0,2.68
+Telemarketing,1,1,100.0,3.0
+Television Broadcasting,8,8,100.0,2.12
+Tennis Club,1,1,100.0,1.0
+Theatres & Theatrical Services,10,10,100.0,2.3
+Tile Store,7,7,100.0,2.43
+Timber & Wood Products,47,47,100.0,2.57
+Stainless Steel Products,32,32,100.0,2.84
+Stenographers & Transcription Services,17,17,100.0,2.94
+Subscription Box Service,1,1,100.0,2.0
+Surveying Services,20,20,100.0,2.95
+Swimming school,6,6,100.0,1.67
+Tattoo & Piercing Parlors,10,10,100.0,2.9
+Tax Preparation,10,10,100.0,2.6
+Taxicabs,14,14,100.0,2.21
+Software Development Services,10,10,100.0,3.0
+Solar Energy Company,8,8,100.0,2.62
+"Spices, Condiments & Sauces",35,35,100.0,2.8
+Sporting & Recreational Camps,10,10,100.0,2.2
+Sporting Goods Store,26,26,100.0,1.81
+"Sports & Leisure - Clubs, Fields & Pitches",7,7,100.0,1.43
+Sports Associations,1,1,100.0,3.0
+Sports Medicine & Physical Therapy,7,7,100.0,2.43
+Shipping Couriers,29,29,100.0,2.86
+Shoe Shining & Repair,11,11,100.0,2.64
+Shoes & Other Footwear Stores,30,30,100.0,2.33
+Signs & Commercial Screens,10,10,100.0,2.6
+Sleep Clinics,9,9,100.0,2.44
+Snack Foods,15,15,100.0,2.33
+Social Media Agencies,2,2,100.0,3.0
+Social Services & NGOs,63,63,100.0,2.51
+"Breaks, Wheels & Tire Dealers",48,48,100.0,2.69
+Breweries,13,13,100.0,2.15
+Building Material Manufacturers,66,66,100.0,2.94
+"Buses, Shuttles & Local Transit",62,62,100.0,2.48
+Business Associations,1,1,100.0,3.0
+Business Consulting,50,50,100.0,2.98
+Butcher shop,13,13,100.0,1.92
+Buyback Shops,33,33,100.0,2.36
+Boat Tours & Cruises,50,50,100.0,2.06
+Boats services & dealers,31,31,100.0,2.26
+Book Publisher,10,10,100.0,1.8
+Book Stores,17,17,100.0,2.53
+Botanical Garden,1,1,100.0,3.0
+Bowling Alley,10,10,100.0,2.8
+Boxing Gym,1,1,100.0,3.0
+Boys & Girls Clubs,2,2,100.0,3.0
+Bed and Breakfast,24,24,100.0,2.92
+Beer & Liquor Stores,17,17,100.0,2.35
+Beverages & Refreshments,38,38,100.0,2.34
+"Bicycle Shops, Parts & Accessories",19,19,100.0,2.63
+Biotechnology,10,10,100.0,2.4
+"Blinds, Curtains & Draperies",38,38,100.0,2.79
+Blood Banks & Donation Centers,10,10,100.0,2.8
+Boat Rental & Chartering Services,4,4,100.0,2.5
+Bartending Schools,5,5,100.0,2.2
+Basketball Club,1,1,100.0,3.0
+Bathroom Furniture & Equipment,7,7,100.0,2.71
+Batteries,10,10,100.0,2.1
+Bearings Manufacturing,2,2,100.0,3.0
+Beauty Salons,18,18,100.0,2.94
+Beauty Salons - Equipment & Supplies,1,1,100.0,3.0
+Beauty Schools,10,10,100.0,2.2
+Cleaning Equipment & Supplies,31,31,100.0,2.77
+Clinics - Surgeons & Physicians,29,29,100.0,2.79
+Clothing Stores,55,55,100.0,2.69
+Coffee & Tea Shops,13,13,100.0,1.69
+Colleges & Universities,20,20,100.0,2.9
+Comic Book Store,3,3,100.0,3.0
+Commercial Printing,42,42,100.0,2.83
+Community Foundations,13,13,100.0,2.54
+Chinese Restaurants,2,2,100.0,1.5
+Chiropractors,10,10,100.0,2.3
+Churches & Religious Organizations,10,10,100.0,2.8
+Cigar & Tobacco Stores,4,4,100.0,3.0
+Cinemas & Video Theaters,20,20,100.0,1.7
+Civil Engineering Services,15,15,100.0,2.87
+Civil Law Attorney,1,1,100.0,3.0
+Clay & Pottery Products,10,10,100.0,3.0
+Car Washes,10,10,100.0,2.5
+Cardiology Clinics,3,3,100.0,2.0
+Carpet Cleaning,10,10,100.0,3.0
+"Carpets, Rugs & Other Floor Covers",30,30,100.0,1.93
+Casino & Betting,20,20,100.0,2.45
+Catering & Delivery,22,22,100.0,2.77
+Chemicals,150,150,100.0,2.51
+Children Clothing,2,2,100.0,3.0
+CBD and Medical Marijuana,7,7,100.0,2.71
+Cabinet Makers,8,8,100.0,2.5
+Cable & Internet Providers,39,39,100.0,2.59
+Cables & Wires,46,46,100.0,2.37
+Call Centers,20,20,100.0,2.9
+Cameras & Photographic Equipment Stores,9,9,100.0,2.56
+Campus Rentals,4,4,100.0,3.0
+Car Rental,55,55,100.0,2.53
+Detectives & Investigation Services,10,10,100.0,2.7
+Device Manufacturing,3,3,100.0,2.67
+Die Casting & Tool Manufacturing,4,4,100.0,3.0
+Digital & Marketing Agencies,39,39,100.0,3.0
+Distilleries & Malt Processing,10,10,100.0,2.6
+Divorce & Family Law Attorneys,1,1,100.0,2.0
+Domestic Violence NGOs,2,2,100.0,3.0
+Driving Schools,12,12,100.0,2.75
+Damage Restoration & Mold Remediation,15,15,100.0,3.0
+Dance Schools,5,5,100.0,3.0
+Daycare Centers,11,11,100.0,2.09
+Debt Collection Agencies,23,23,100.0,2.35
+Decorators & Interior Designers,19,19,100.0,2.89
+Dental Laboratory,20,20,100.0,2.4
+Dentists & Dental Clinics,10,10,100.0,3.0
+Dermatology Clinics,5,5,100.0,2.2
+Credit Reporting Services,10,10,100.0,2.9
+Credit Unions & Savings Institutions,19,19,100.0,1.84
+Crossfit Centers,1,1,100.0,3.0
+Cryptocurrency,24,24,100.0,2.54
+Custom Furniture,1,1,100.0,3.0
+Cybersecurity,1,1,100.0,3.0
+DJs & Event Entertainers,2,2,100.0,2.5
+Dairy Products - Farms & Stores,51,51,100.0,2.75
+Computer Repair & Service,29,29,100.0,2.83
+Computer Stores,4,4,100.0,2.25
+Computer Training Schools,9,9,100.0,2.0
+Concrete Work,27,27,100.0,2.89
+Construction Services,40,40,100.0,2.92
+Cosmetic Manufacturing,1,1,100.0,3.0
+Cosmetics Stores,18,18,100.0,2.28
+Courthouses,59,59,100.0,2.56
+"Executive, Legislative & Government Institutions",172,172,100.0,2.72
+Fabric-Based Home Goods,110,110,100.0,2.96
+Fabricated Rubber Products,28,28,100.0,2.68
+Farm Equipment,20,20,100.0,2.9
+Farms & Agriculture Production,237,237,100.0,2.59
+Fashion Accessories,4,4,100.0,2.5
+Fashion Designers,1,1,100.0,3.0
+Fast food Restaurants,18,18,100.0,2.28
+Employment Attorneys,1,1,100.0,1.0
+Engines,38,38,100.0,2.26
+Entertainers,17,17,100.0,2.53
+Environmental Engineering Services,16,16,100.0,3.0
+Equine Services,5,5,100.0,2.8
+Escrow Companies,10,10,100.0,2.8
+Event Planner Services,30,30,100.0,2.8
+"Excavation, Bulldozing & Demolition",20,20,100.0,2.7
+Electric Vehicle Charging Station,3,3,100.0,2.33
+Electrical & Wiring Contractors,10,10,100.0,3.0
+Electronical Components Manufacturing,117,117,100.0,2.66
+Electronical Components Retailer,23,23,100.0,2.7
+Electronics Repair & Maintenance,1,1,100.0,3.0
+Electronics Stores,58,58,100.0,2.36
+Elevators & Ramps - Installation & Service,10,10,100.0,3.0
+Employment Agencies & HR Consulting,39,39,100.0,2.87
+Drug Stores & Pharmacies,29,29,100.0,2.14
+Dry Cleaners,40,40,100.0,2.28
+Drywall & Insulation Contractors,11,11,100.0,2.91
+ENT Specialists,1,1,100.0,3.0
+Edible oils manufacturing & distribution,17,17,100.0,1.65
+Educational Associations,4,4,100.0,2.0
+Educational Consultants,8,8,100.0,2.62
+Electric Supplies & Power Generation,66,66,100.0,2.35
+General Contractors,1,1,100.0,3.0
+General Practice Attorneys,4,4,100.0,2.25
+Gift Shops,24,24,100.0,2.54
+Glass & Mirror Stores,40,40,100.0,2.95
+Glaziers & Glass Products,10,10,100.0,2.5
+Golf Courses & Country Clubs,10,10,100.0,2.4
+Graphic Design,10,10,100.0,2.8
+Groceries,59,59,100.0,2.53
+Fruit & Vegetable - Markets & Stores,93,93,100.0,2.68
+Funeral Services & Cemeteries,19,19,100.0,2.74
+Furniture Repair & Reconditioning,10,10,100.0,2.5
+Furniture Stores,90,90,100.0,2.71
+Garbage Collection & Waste Disposal,85,85,100.0,2.71
+Garden Equipment & Supplies,37,37,100.0,2.76
+Gas Stations,39,39,100.0,2.33
+Gastroenterology Clinics,1,1,100.0,3.0
+Fitness Equipment,3,3,100.0,2.67
+Flight Training,11,11,100.0,2.55
+Flooring Contractors,29,29,100.0,2.97
+Florists,20,20,100.0,2.4
+Food & Beverage Associations,1,1,100.0,3.0
+Food Banks,9,9,100.0,2.78
+Food Production,67,67,100.0,2.64
+Forging & Metal Stampings,66,66,100.0,2.58
+Fastener Suppliers,20,20,100.0,2.35
+Fences & Ornamental Metal Work,10,10,100.0,2.8
+"Fertility, Birth & Maternity Services",12,12,100.0,2.83
+Financial Services,7,7,100.0,2.14
+Fine Arts Schools,1,1,100.0,1.0
+Fire Departments & Fire Protection,13,13,100.0,2.23
+Firewood Supplier,9,9,100.0,2.33
+Fish Farms,39,39,100.0,1.92
+Ice,10,10,100.0,1.8
+Ice Cream,10,10,100.0,2.5
+Immigration Attorneys,1,1,100.0,2.0
+Independent Living Facilities,2,2,100.0,3.0
+Industrial Air Solutions,87,87,100.0,2.59
+Industrial Machinery & Supplies,126,126,100.0,2.87
+Industry Associations,1,1,100.0,3.0
+Injection Molding Services,2,2,100.0,3.0
+Homelessness Shelter,11,11,100.0,2.45
+Honey Farms & Bee Keepers,10,10,100.0,2.4
+Hose & Belts,9,9,100.0,2.0
+Hosting & Cloud Infrastructure Providers,9,9,100.0,3.0
+Hotels,15,15,100.0,3.0
+Housing Programs,10,10,100.0,2.9
+Hunting & Fishing - Services & Supplies,2,2,100.0,3.0
+Hydropower energy and services,10,10,100.0,3.0
+Health & Medical Association,4,4,100.0,2.25
+Health Insurance Agency,1,1,100.0,3.0
+Heating & Air Conditioning,5,5,100.0,2.8
+Heavy Construction Equipment,85,85,100.0,2.73
+High Schools,5,5,100.0,2.6
+Hobby Shops,3,3,100.0,2.33
+Home Builders & Renovation Contractors,20,20,100.0,2.85
+Home Health Care,10,10,100.0,2.6
+Gun shop,38,38,100.0,2.39
+Gymnastics,1,1,100.0,2.0
+"Gyms, Fitness & Health Centers",19,19,100.0,2.63
+Hair Salons,2,2,100.0,3.0
+"Hamburgers, Hot-Dogs & Sandwiches",10,10,100.0,2.9
+Handmade & Crafts Marketplace,18,18,100.0,2.5
+Handyman Services,2,2,100.0,3.0
+Hardware Stores,68,68,100.0,2.53
+Market Research & Opinion Polling,11,11,100.0,3.0
+Martial Arts Gyms,9,9,100.0,2.78
+Masonry Contractors,10,10,100.0,2.9
+Masonry Supply Store,2,2,100.0,2.0
+Mattress Stores,5,5,100.0,2.4
+Meat Production & Processing,30,30,100.0,2.83
+"Meat, Fish & Seafood Stores",46,46,100.0,2.17
+Media & Telecom Associations,1,1,100.0,3.0
+Limousines,18,18,100.0,2.06
+Livestock & Animal Raising,121,121,100.0,2.63
+Loans & Financing,27,27,100.0,2.78
+Locksmiths,10,10,100.0,2.8
+"Luggages, Bags & Handbags",5,5,100.0,3.0
+Machinery parts manufacturer,21,21,100.0,3.0
+Malls & Shopping Centers,4,4,100.0,3.0
+"Marble, Granite & Stone Products",40,40,100.0,2.72
+Language & Speaking Schools,15,15,100.0,2.73
+Laser Tag Center,2,2,100.0,3.0
+"Learning, Tutoring & Courses",41,41,100.0,2.51
+Leather Processing,25,25,100.0,2.64
+Legal Associations,3,3,100.0,1.67
+Legal Services,1,1,100.0,2.0
+Libraries,10,10,100.0,2.8
+Lighting Stores,31,31,100.0,2.45
+"Insurance - Agents, Carriers & Brokers",97,97,100.0,2.26
+Investment Consultants & Financial Advisors,42,42,100.0,2.64
+Investment Firms & Venture Capital,33,33,100.0,2.64
+Irrigation Systems & Services,2,2,100.0,3.0
+Japanese & Sushi Restaurants,2,2,100.0,3.0
+Kitchen Furniture & Equipment,32,32,100.0,2.81
+Laboratory Equipment & Supplies,56,56,100.0,2.68
+Landscaping & Lawn Services,21,21,100.0,3.0
+"Musicians, Orchestras & Bands",21,21,100.0,2.19
+Nanotechnology,11,11,100.0,2.73
+Nephrology Clinic,9,9,100.0,2.56
+Neurology Clinics,1,1,100.0,1.0
+Newspapers & Magazines,50,50,100.0,2.76
+Notaries,20,20,100.0,2.2
+Nursing & Personal Care,13,13,100.0,2.92
+Nutritionists & Weight Loss Specialists,10,10,100.0,2.7
+Mortgage Brokers,22,22,100.0,2.32
+Motels,2,2,100.0,2.0
+"Motor Homes, Trailers & RVs - Dealers & Rentals",50,50,100.0,1.84
+Motorcycle Dealers & Rentals,1,1,100.0,3.0
+Movers & Heavy Transportation,10,10,100.0,2.5
+Museums,20,20,100.0,2.8
+Music Schools & Instructors,7,7,100.0,3.0
+Musical Instruments & Music Stores,21,21,100.0,2.76
+Metal Storage Tanks,28,28,100.0,2.64
+Middle Schools,2,2,100.0,3.0
+"Minerals, Earths & Ores",110,110,100.0,1.94
+Mining & Gas Exploration,33,33,100.0,2.42
+Mobile App Agencies,3,3,100.0,2.33
+Modeling Agency,10,10,100.0,2.6
+Money Transfer,5,5,100.0,2.6
+Monuments & Memorials,1,1,100.0,3.0
+Medical Laboratories,7,7,100.0,2.0
+Medical Research,2,2,100.0,3.0
+Medical Supply Manufacturers,46,46,100.0,2.63
+Medical Supply Retailers,4,4,100.0,2.25
+Meditation & Retreat Centers,24,24,100.0,2.79
+Metal Fabrication Services,68,68,100.0,2.91
+"Metal Plating, Polishing & Coloring",40,40,100.0,2.68
+Metal Roofing,11,11,100.0,2.45
+Party Rentals,20,20,100.0,2.6
+Pathologists,2,2,100.0,3.0
+Pavers,1,1,100.0,3.0
+Pawn Shops & Pawnbrokers,1,1,100.0,3.0
+Payment Processing & Point of Sale,14,14,100.0,2.5
+Pediatrists,5,5,100.0,2.0
+Personal Trainer,1,1,100.0,3.0
+Pest Services & Agricultural Chemicals,14,14,100.0,2.36
+Packing & Crating,46,46,100.0,2.78
+Packing & Sealing Devices & Materials,3,3,100.0,3.0
+Paintball Center,1,1,100.0,3.0
+"Painting, Plastering & Wall Covering",9,9,100.0,2.56
+"Paints, Coatings, Dyes & Pigments",41,41,100.0,2.71
+Pallet Supplier,10,10,100.0,3.0
+Paper & Cardboard Products,106,106,100.0,2.74
+Parks,10,10,100.0,2.6
+Ophthalmic & Optical Instruments & Lenses,30,30,100.0,2.43
+Ophthalmologists,2,2,100.0,2.0
+Optometrists,10,10,100.0,2.8
+Orthopedic Clinics,8,8,100.0,2.38
+Other Building Material Retailers,13,13,100.0,2.69
+Other Engineering Services,14,14,100.0,2.71
+Outdoor Advertising Services,11,11,100.0,2.82
+Packaging Solutions,1,1,100.0,3.0
+Nuts & Seeds,14,14,100.0,1.93
+Occupational Therapy,3,3,100.0,2.67
+Office & Industrial Cleaning,20,20,100.0,2.85
+Office Furniture,24,24,100.0,2.75
+Office Spaces,1,1,100.0,3.0
+Office Supplies,47,47,100.0,2.77
+Oil & Gas - Extraction & Distribution,82,82,100.0,2.45
+Online Marketplace,2,2,100.0,3.0
+Psychologists & Counseling Services,31,31,100.0,2.58
+Public Relations Agencies,11,11,100.0,3.0
+Pubs & Bars,7,7,100.0,2.29
+Pumps & Hydraulics Manufacturing,36,36,100.0,2.56
+RV Parks & Campgrounds,10,10,100.0,2.5
+Race Tracks & Racing Supplies,11,11,100.0,2.09
+Radio & Television Production,22,22,100.0,2.82
+Radio Networks & Stations,10,10,100.0,2.8
+Postal Service,14,14,100.0,2.43
+Poultry & Egg Farms,49,49,100.0,2.41
+Preschools & Kindergartens,1,1,100.0,3.0
+Primary Schools,1,1,100.0,3.0
+Process Servers,3,3,100.0,2.0
+Promotional Merchandising,1,1,100.0,3.0
+Property Management,20,20,100.0,2.7
+Psychiatrists & Psychiatric Hospitals,5,5,100.0,3.0
+Plastic Surgery Clinics,4,4,100.0,2.0
+Plastics Products,100,100,100.0,2.85
+Plumbing Services,4,4,100.0,3.0
+Podiatrists,9,9,100.0,3.0
+Police & Sheriffs,11,11,100.0,2.45
+Political Organizations,10,10,100.0,2.5
+Pools & Jacuzzi Services,2,2,100.0,3.0
+Pools & Jacuzzi Stores,3,3,100.0,2.67
+Pet Boarding & Sitting,8,8,100.0,3.0
+Pet Cemeteries,9,9,100.0,2.33
+Pet Shops,28,28,100.0,2.75
+Pharmaceutical Products,42,42,100.0,2.5
+Phone Repair & Services,12,12,100.0,3.0
+Photographers & Photographic Studios,40,40,100.0,2.62
+"Pipes, Tubes, Fittings & Valves",50,50,100.0,2.84
+Plant Nurseries & Stores,23,23,100.0,2.22
+Safety Training,25,25,100.0,2.96
+Sailing Club,9,9,100.0,2.22
+Sales Agencies,17,17,100.0,3.0
+Salvage Merchandise & Thrift Stores,11,11,100.0,2.45
+Scale Solutions,6,6,100.0,2.67
+Scrap Metals,52,52,100.0,2.44
+Security Guards & Patrol Services,12,12,100.0,2.58
+Senior Care and Assisted Living Facilities,45,45,100.0,2.49
+Renewable energy companies,46,46,100.0,2.39
+Research Institutes,19,19,100.0,2.53
+Resorts,5,5,100.0,3.0
+Restaurant Equipment,27,27,100.0,2.7
+Restaurants,6,6,100.0,2.0
+Retirement Planning,1,1,100.0,2.0
+Ridesharing,1,1,100.0,3.0
+Roofing Contractors,30,30,100.0,2.7
+Real Estate Rental,10,10,100.0,2.1
+Real Estate Valuations & Home Inspection,20,20,100.0,2.9
+Recruitment & Job Listing Services,1,1,100.0,1.0
+Refrigeration Equipment & Supplies,13,13,100.0,2.85
+Regenerative Clinics,1,1,100.0,3.0
+Rehab & Addiction - Centers & Therapists,10,10,100.0,2.4
+Religious Goods,15,15,100.0,2.53
+Religious Schools,1,1,100.0,3.0
+Radiology Clinic,9,9,100.0,2.89
+Railroad Service Companies,47,47,100.0,2.62
+Ready Mix Concrete Supplier,26,26,100.0,2.65
+Real Estate - Agents & Managers,10,10,100.0,2.8
+Real Estate Associations,3,3,100.0,1.33
+Real Estate Attorneys,1,1,100.0,2.0
+Real Estate Developers,20,20,100.0,2.75
+Real Estate Investment,19,19,100.0,2.42
+Water Supply & Water Treatment,21,21,100.0,2.71
+Waterproofing Services,10,10,100.0,2.9
+Welding Services,11,11,100.0,3.0
+Wind Energy Equipment & Services,11,11,100.0,2.73
+Windows & Door Shops,20,20,100.0,2.85
+Wine Shops & Wineries,22,22,100.0,2.5
+Wood Building Material Stores,50,50,100.0,2.7
+Adhesives & Sealants,29,29,100.0,2.66
+Vending Machines,10,10,100.0,2.5
+Veterinarians & Animal Hospitals,10,10,100.0,3.0
+Video Games - Development & Publishing,16,16,100.0,2.81
+Video and Audio Production,30,30,100.0,2.3
+Vitamins & Supplements,9,9,100.0,2.44
+Warehousing & Storage,58,58,100.0,2.43
+Watch Repair Shop,1,1,100.0,1.0
+Watches & Jewelry Stores,30,30,100.0,2.63
+Travel Associations,1,1,100.0,3.0
+Tree Farms,33,33,100.0,2.39
+Trucking and Logistics,121,121,100.0,2.54
+Urology Clinics,1,1,100.0,3.0
+Used Auto Parts Store,1,1,100.0,1.0
+Utility companies,20,20,100.0,2.25
+Valet Services & Parking Lots,10,10,100.0,2.4
+Vaporizer Stores,1,1,100.0,3.0
+Title Abstract & Settlement Offices,10,10,100.0,2.8
+Tobacco,18,18,100.0,2.89
+Tour Operators,9,9,100.0,1.22
+Towing Wrecking & Roadside Assistance,10,10,100.0,2.6
+Toys & Games Stores,27,27,100.0,2.44
+Translation Services,10,10,100.0,2.3
+Transportation & Shipping Associations,1,1,100.0,3.0
+Travel Agencies,31,31,100.0,1.68
+Auto Parts Manufacturers,94,94,100.0,2.43
+Auto Parts Store,11,11,100.0,3.0
+Auto Services,40,40,100.0,2.7
+Automobile Dealers & Manufacturers,53,53,100.0,2.43
+Awards & Trophies & Plaques,1,1,100.0,1.0
+Bakeries & Desserts,80,80,100.0,2.09
+Banks & ATMs,12,12,100.0,1.83
+Barber Shops,10,10,100.0,3.0
+Art Galleries,10,10,100.0,2.8
+Asphalt & Paving Products,25,25,100.0,2.12
+Asphalt & Paving Services,11,11,100.0,2.73
+Associations,9,9,100.0,2.44
+Auto Body Shops,10,10,100.0,2.7
+Auto Electrical Equipment,6,6,100.0,2.67
+Auto Glass Stores,10,10,100.0,2.2
+Auto Insurance Agency,2,2,100.0,1.5
+Animal Shelters,10,10,100.0,3.0
+Animal Training,2,2,100.0,3.0
+Appliance Repair & Maintenance,36,36,100.0,2.97
+Appliance Stores,19,19,100.0,2.68
+Aquarium,1,1,100.0,1.0
+Arcades & Amusement Parks,22,22,100.0,2.64
+Architects & Architectural Services,21,21,100.0,2.86
+Art & Music Publishers,41,41,100.0,2.66
+Adoption Agencies & Foster Care,9,9,100.0,2.44
+Aircraft Parts & Services,43,43,100.0,2.53
+Airline Companies,35,35,100.0,2.43
+"Alarms, Surveillance & Security Systems",48,48,100.0,2.69
+Alternative Therapy,10,10,100.0,2.3
+Aluminum Processing & Products,42,42,100.0,2.74
+Ambulances & Rescue Squads,10,10,100.0,2.7
+Animal Feed,2,2,100.0,3.0

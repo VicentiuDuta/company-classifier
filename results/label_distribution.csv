@@ -1,0 +1,214 @@
+label,count,percentage,cumulative_percentage
+Apparel Manufacturing,1473,6.0,6.0
+Marketing Services,1382,5.63,11.63
+Gas Manufacturing Services,1248,5.09,16.72
+Accessory Manufacturing,1193,4.86,21.58
+Travel Services,1078,4.39,25.97
+Real Estate Services,915,3.73,29.7
+Livestock Dealer Services,647,2.64,32.34
+Agricultural Equipment Services,588,2.4,34.74
+Cabinetry Manufacturing,558,2.27,37.01
+Furniture Manufacturing,411,1.68,38.69
+Textile Manufacturing Services,406,1.65,40.34
+Digital Marketing Services,387,1.58,41.92
+Software Manufacturing,368,1.5,43.42
+Wood Product Manufacturing,353,1.44,44.86
+Chemical Manufacturing,350,1.43,46.29
+Bakery Production Services,343,1.4,47.69
+Food Processing Services,321,1.31,49.0
+Corporate Responsibility Services,315,1.28,50.28
+Plastic Manufacturing,307,1.25,51.53
+E-Commerce Services,291,1.19,52.72
+Stakeholder Services,277,1.13,53.85
+Financial Services,265,1.08,54.93
+Consulting Services,228,0.93,55.86
+Pharmaceutical Manufacturing,227,0.93,56.79
+Paper Production Services,219,0.89,57.68
+Arts Services,219,0.89,58.57
+Training Services,217,0.88,59.45
+Commercial Construction Services,208,0.85,60.3
+Compliance Services,202,0.82,61.12
+Corporate Training Services,195,0.79,61.91
+Animal Feed Manufacturing,186,0.76,62.67
+Pet Food Manufacturing,179,0.73,63.4
+Meat Processing Services,179,0.73,64.13
+Cosmetic Manufacturing,178,0.73,64.86
+Commercial Electrical Services,176,0.72,65.58
+Media Production Services,174,0.71,66.29
+Dairy Production Services,167,0.68,66.97
+Rubber Manufacturing,149,0.61,67.58
+Road Maintenance Services,146,0.6,68.18
+Children's Clothing Manufacturing,144,0.59,68.77
+Tent Manufacturing Services,143,0.58,69.35
+Insurance Services,142,0.58,69.93
+Carpet Manufacturing Services,138,0.56,70.49
+Gardening Services,138,0.56,71.05
+Industrial Plumbing Services,135,0.55,71.6
+Millwork Services,132,0.54,72.14
+Recycling Services,129,0.53,72.67
+Waste Management Services,127,0.52,73.19
+Property Management Services,126,0.51,73.7
+Business Development Services,125,0.51,74.21
+Oil and Fat Manufacturing,119,0.49,74.7
+Health Promotion Services,116,0.47,75.17
+Non-Structural Steel Fabrication,116,0.47,75.64
+Non-Profit Management,113,0.46,76.1
+Confectionery Manufacturing,113,0.46,76.56
+Building Cleaning Services,112,0.46,77.02
+Catering Services,110,0.45,77.47
+Landscaping Services,107,0.44,77.91
+Fundraising Services,104,0.42,78.33
+Industrial Machinery Installation,102,0.42,78.75
+Legal Services,102,0.42,79.17
+Pipeline Construction Services,96,0.39,79.56
+Well Maintenance Services,93,0.38,79.94
+Land Leveling Services,92,0.38,80.32
+Seafood Processing Services,92,0.38,80.7
+Sand and Gravel Mining,91,0.37,81.07
+Ink Production Services,91,0.37,81.44
+Non-Alcoholic Beverage Manufacturing,89,0.36,81.8
+Agricultural Machinery Installation,89,0.36,82.16
+Printing Services,88,0.36,82.52
+Asphalt Production Services,86,0.35,82.87
+Interior Design Services,85,0.35,83.22
+Welding Services,84,0.34,83.56
+Branding Services,80,0.33,83.89
+Management Consulting,78,0.32,84.21
+Stationery Manufacturing,77,0.31,84.52
+Timber Harvesting Operations,75,0.31,84.83
+Sheet Metal Services,74,0.3,85.13
+Sports Management Services,74,0.3,85.43
+Advertising Services,72,0.29,85.72
+Residential Electrical Services,68,0.28,86.0
+Window and Door Manufacturing,67,0.27,86.27
+Human Resources Services,66,0.27,86.54
+Market Research Services,64,0.26,86.8
+Fire Safety Equipment Services,62,0.25,87.05
+Pallet Manufacturing,62,0.25,87.3
+Publishing Services,60,0.24,87.54
+Online Marketing Services,60,0.24,87.78
+Multi-Family Construction Services,59,0.24,88.02
+Bedding Manufacturing,59,0.24,88.26
+Rope Production Services,59,0.24,88.5
+Volunteer Services,59,0.24,88.74
+Physical Therapy Services,58,0.24,88.98
+Mobile Home Construction Services,57,0.23,89.21
+Excavation Services,55,0.22,89.43
+Painting Services,54,0.22,89.65
+Insulation Services,53,0.22,89.87
+Food Safety Services,52,0.21,90.08
+Canvas Manufacturing,52,0.21,90.29
+Well Drilling Services,52,0.21,90.5
+Grain Processing Services,52,0.21,90.71
+Frozen Food Processing,52,0.21,90.92
+Animal Training Services,51,0.21,91.13
+Carpentry Services,48,0.2,91.33
+Canning Services,48,0.2,91.53
+Residential Roofing Services,48,0.2,91.73
+Commercial Renovation Services,47,0.19,91.92
+Masonry Construction Services,45,0.18,92.1
+Technology Consulting,45,0.18,92.28
+Window Treatment Manufacturing,44,0.18,92.46
+Fire Protection System Services,43,0.18,92.64
+Graphic Design Services,42,0.17,92.81
+Coffee Processing Services,41,0.17,92.98
+Fishing and Hunting Services,41,0.17,93.15
+Ice Production Services,41,0.17,93.32
+Commercial Plumbing Services,40,0.16,93.48
+Veterinary Services,40,0.16,93.64
+Testing and Inspection Services,40,0.16,93.8
+Field Welding Services,39,0.16,93.96
+Gas Installation Services,39,0.16,94.12
+Risk Assessment Services,37,0.15,94.27
+Laboratory Services,37,0.15,94.42
+Water Treatment Services,37,0.15,94.57
+Restoration Services,37,0.15,94.72
+Brewery Operations,36,0.15,94.87
+Environmental Health Services,35,0.14,95.01
+Veterinary Clinics,34,0.14,95.15
+Street Cleaning Operations,31,0.13,95.28
+Software Development Services,31,0.13,95.41
+Apartment Renovation Services,31,0.13,95.54
+Flooring Installation Services,30,0.12,95.66
+Home Staging Services,30,0.12,95.78
+Occupational Health Services,30,0.12,95.9
+Social Media Services,28,0.11,96.01
+Fitness Coaching,27,0.11,96.12
+Veterinary Health Centers,26,0.11,96.23
+Community Engagement Services,25,0.1,96.33
+Boiler Repair Services,25,0.1,96.43
+Trim Manufacturing,24,0.1,96.53
+Event Planning Services,24,0.1,96.63
+Animal Day Care Services,24,0.1,96.73
+Pesticide Application Services,23,0.09,96.82
+Strategic Planning Services,23,0.09,96.91
+Content Creation Services,23,0.09,97.0
+Drywall Services,23,0.09,97.09
+Cable Installation Services,22,0.09,97.18
+Medical Gas Installation Services,22,0.09,97.27
+Grain Handling Machinery Installation,21,0.09,97.36
+Distilling Services,20,0.08,97.44
+Pet Grooming Services,20,0.08,97.52
+Soil Nutrient Application Services,20,0.08,97.6
+Project Management Services,20,0.08,97.68
+Waterproofing Services,19,0.08,97.76
+Health and Safety Consulting,19,0.08,97.84
+Ornamental Plant Nurseries,19,0.08,97.92
+Environmental Consulting,18,0.07,97.99
+Infrastructure Excavation,18,0.07,98.06
+Septic System Services,18,0.07,98.13
+Crisis Management Services,18,0.07,98.2
+Public Relations Services,17,0.07,98.27
+Air Duct Cleaning Services,17,0.07,98.34
+Quality Assurance Services,16,0.07,98.41
+Elevator Installation Services,16,0.07,98.48
+Swimming Pool Maintenance Services,15,0.06,98.54
+Seed Processing Services,15,0.06,98.6
+Commercial Irrigation Systems,15,0.06,98.66
+Plastic Signage Production,14,0.06,98.72
+Soap Production Services,14,0.06,98.78
+Alarm Installation Services,14,0.06,98.84
+Directional Drilling Services,14,0.06,98.9
+High-Rise Glass Installation,14,0.06,98.96
+Sidewalk Construction Services,13,0.05,99.01
+HVAC Installation and Service,13,0.05,99.06
+Pet Boarding Services,12,0.05,99.11
+Vacant Land Services,12,0.05,99.16
+Spray Painting Services,12,0.05,99.21
+Single Family Renovation Services,12,0.05,99.26
+General Handyman Services,12,0.05,99.31
+Residential Plumbing Services,11,0.04,99.35
+Tile Installation Services,10,0.04,99.39
+Windows and Doors Installation,9,0.04,99.43
+Roofing Services with Heat Application,9,0.04,99.47
+Fencing Construction Services,9,0.04,99.51
+Low-Rise Glass Installation,8,0.03,99.54
+Road and Highway Construction,8,0.03,99.57
+Dock and Pier Construction,8,0.03,99.6
+Animal Trainers,8,0.03,99.63
+Swimming Pool Installation Services,8,0.03,99.66
+Commercial Communication Equipment Installation,7,0.03,99.69
+Data Analysis Services,7,0.03,99.72
+Precast Concrete Installation,6,0.02,99.74
+SEO Services,6,0.02,99.76
+Rendering Services,6,0.02,99.78
+Steam Services,6,0.02,99.8
+Single Family Residential Construction,6,0.02,99.82
+High-Rise Signage Installation,4,0.02,99.84
+Tank Installation Services,4,0.02,99.86
+Commercial Driveway Construction,4,0.02,99.88
+Commercial Drain Cleaning,3,0.01,99.89
+Low-Rise Signage Installation,3,0.01,99.9
+Tilt-Up Concrete Services,3,0.01,99.91
+Boiler Installation Services,3,0.01,99.92
+Structural Steel Erection,3,0.01,99.93
+General Snow Removal Services,2,0.01,99.94
+Website Development Services,2,0.01,99.95
+HVAC Inspections,2,0.01,99.96
+Residential Communication Equipment Installation,2,0.01,99.97
+Tree Services - Pruning / Removal,1,0.0,99.97
+Conveyor System Installation,1,0.0,99.97
+New Ground Excavation,1,0.0,99.97
+High-Rise Foundation Construction,1,0.0,99.97
+New Ground Pipeline Installation,1,0.0,99.97
+Electric Line Construction,1,0.0,99.97
